@@ -46,7 +46,7 @@ public class AdminHomeMoneyTypePageTest extends TestBase{
 		Object data[][] = TestUtil.getTestData("MoneyTypeData");
 		return data;
 	}
-	
+
 	@Test(priority = 2, dataProvider = "getMoneyTypeTestData")
 	public void verifyAddNewMoneyTypeTest(String moneyTypeName) throws InterruptedException {
 		Thread.sleep(3000);

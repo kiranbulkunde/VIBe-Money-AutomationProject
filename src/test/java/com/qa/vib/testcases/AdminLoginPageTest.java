@@ -16,12 +16,12 @@ public class AdminLoginPageTest extends TestBase {
 	AdminLoginPage aLoginPage;   
 	AdminHomePage homePage;
 	TestUtil testUtil;
-	
-	
+
+
 	public AdminLoginPageTest(){
 		super(); //to call super class constructor
 	}
-	
+
 	@BeforeMethod
 	public void setUp() throws InterruptedException
 	{
@@ -29,31 +29,31 @@ public class AdminLoginPageTest extends TestBase {
 		aLoginPage = new AdminLoginPage();
 		testUtil = new TestUtil();
 	}
-	
+
 	@Test(priority=1)
 	public void aLoginPageTitleTest(){
 		String title = aLoginPage.validateLoginTitle();
 		Assert.assertEquals(title, "Vibemoney","Login Page Title not Matched");
 	}
-	
+
 	@Test(priority=2)
 	public void vibemLogoImageTest(){
 		boolean img = aLoginPage.validateVibemLogo();
 		Assert.assertTrue(img);
 	}
-	
+
 	@DataProvider
 	public Object[][] getLoginData() {
 		Object data[][] = TestUtil.getTestData("LoginData");
 		return data;
 	}
-	
+
 	@Test(priority=3, dataProvider = "getLoginData")
 	public void adminLoginTest(String username, String password){
 		homePage = aLoginPage.adminLogin(prop.getProperty("userName"), prop.getProperty("password"));
 		//homePage = aLoginPage.adminLogin(username, password);
 	}
-	
+
 	@AfterMethod
 	public void shutDown(){
 		driver.quit();

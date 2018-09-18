@@ -9,23 +9,24 @@ import com.qa.vib.base.TestBase;
 public class AdminHomeTransactionTypePage extends TestBase {
 
 	//Page Factory or Object Repository for all webElements:
-
-	@FindBy(xpath = "")
+	String transTypeName;
+	
+	@FindBy(xpath = "//h4[@class='ng-scope']")
 	WebElement transTypeTitle;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[@class='vib_save']")
 	WebElement addtransTypeBtn;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@placeholder='Enter transaction type name']")
 	WebElement entertransTypeName;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement saveBtn;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='msearch']")
 	WebElement searchField;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//td[contains(text(),'transTypeName')]")
 	WebElement validSearchResult;
 
 	@FindBy(xpath = "")

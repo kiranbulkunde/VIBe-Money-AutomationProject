@@ -15,12 +15,12 @@ import com.qa.vib.pages.AdminLoginPage;
 import com.qa.vib.util.TestUtil;
 
 public class AdminHomeCountryPageTest extends TestBase{
-	
+
 	AdminLoginPage aLoginPage;   
 	AdminHomePage aHomePage;
 	AdminHomeCountryPage countryPage;
 	TestUtil testUtil;
-	
+
 	public AdminHomeCountryPageTest(){
 		super(); 
 	}
@@ -35,19 +35,19 @@ public class AdminHomeCountryPageTest extends TestBase{
 		countryPage = new AdminHomeCountryPage();
 		countryPage = aHomePage.clickonMasterCountry();
 	}
-	
+
 	@Test(priority = 1)
 	public void verifyCountryPageTitleTest() {
 		boolean title = countryPage.validateCountryTitle();
 		Assert.assertTrue(title);
 	}
-	
+
 	@DataProvider
 	public Object[][] getCountryTestData() {
 		Object data[][] = TestUtil.getTestData("CountryData");
 		return data;
 	}
-	
+
 	@Test(priority = 2, dataProvider = "getCountryTestData")
 	public void verifyAddNewCountryTest(String countryName) throws InterruptedException  {
 		Thread.sleep(3000);
@@ -55,28 +55,28 @@ public class AdminHomeCountryPageTest extends TestBase{
 		String countrySearch =  driver.findElement(By.xpath("//td[contains(text(),'"+countryName+"')]")).getText();
 		Assert.assertEquals(countrySearch, countryName);
 	}
-	
+
 	@Test(priority = 3, dataProvider = "getCountryTestData")
 	public void verifySearchResult(String countryName) {
 		countryPage.validateCountryNameBySearch(countryName);
 		String countrySearch =  driver.findElement(By.xpath("//td[contains(text(),'"+countryName+"')]")).getText();
 		Assert.assertEquals(countrySearch, countryName, '"'+countryName+"'" +"Country not Available in Search Result");
 	}
-	
+
 	/*@Test(priority = 4, dataProvider = "getCountryTestData")
 	public void verifyDeleteCountryTest(String countryName) throws Throwable {
 		countryPage.deleteCountry(countryName);	
 		//String countrySearch =  driver.findElement(By.xpath("//td[contains(text(),'"+countryName+"')]")).getText();
 		//Assert.assertFalse(false, countrySearch);
 	}*/
-	
+
 	@AfterMethod
 	/*public void adminLogout() {
 		aHomePage.clickonLogOut();
 	}*/
-	
+
 	public void shutDown(){
 		driver.quit();
 	}
-	
+
 }

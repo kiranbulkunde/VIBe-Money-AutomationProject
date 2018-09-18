@@ -154,7 +154,7 @@ public class AdminHomePageTest extends TestBase {
 		aLoginPage = new AdminLoginPage();//create loginPage object to access loginpage class method
 		aHomePage = aLoginPage.adminLogin(prop.getProperty("username"), prop.getProperty("password"));// thats why call login method
 	}
-	
+
 	@Test(priority = 1)
 	public void verifyAdminHomePageTitleTest() throws Throwable {
 		Thread.sleep(1000);
@@ -172,48 +172,48 @@ public class AdminHomePageTest extends TestBase {
 	public void verifyCompanyConfigLinkTest() throws Throwable {
 		adminHomeCompanyConfigPage = aHomePage.clickonMasterCompanyConfig();
 	}
-	
-	
+
+
 	@Test(priority = 4)
 	public void verifyCountryLinkTest() throws Throwable {
 		adminHomeCountryPage = aHomePage.clickonMasterCountry();
 	}
-	
+
 	@Test(priority = 5)
 	public void verifyServicesLinkTest() throws Throwable {
 		adminHomeServicesPage = aHomePage.clickonMasterServices();
 	}
-	
+
 	@Test(priority = 6)
 	public void verifyOperationLinkTest() throws Throwable {
 		adminHomeOperationPage = aHomePage.clickonMasterOperation();
 	}
-	
+
 	@Test(priority = 7)
 	public void verifyWalletTypeLinkTest() throws Throwable {
 		adminHomeWalletTypePage = aHomePage.clickonMasterWalletType();
 	}
-	
+
 	@Test(priority = 8)
 	public void verifyApprovalLevelLinkTest() throws Throwable {
 		adminHomeApprovalLevelPage = aHomePage.clickonMasterApprovalLevel();
 	}
-	
+
 	@Test(priority = 9)
 	public void verifyAMLDetailsLinkTest() throws Throwable {
 		adminHomeAMLDetailsPage = aHomePage.clickonMasterALMDetails();
 	}
-	
+
 	@Test(priority = 10)
 	public void verifyTransactionTypeLinkTest(){
 		adminHomeTransactionTypePage = aHomePage.clickonTransactionType();
 	}
-	
+
 	@Test(priority = 11)
 	public void verifyMoneyTypeLinkTest() {
 		adminHomeMoneyTypePage = aHomePage.clickonMoneyType();
 	}
-	
+
 	//*****************ConfigurationTabTest*******************************
 	@Test(priority = 12)
 	public void verifyMailManagementLinkTest() throws Throwable {
@@ -229,82 +229,82 @@ public class AdminHomePageTest extends TestBase {
 	public void verifyPassPolicyTest() throws Throwable {
 		adminHomePassPolicyPage = aHomePage.clickonConfigPassPolicy();
 	}
-	
+
 	//****************VendorTabTest****************************************
 	@Test(priority = 15)
 	public void verifyWalletTableLinkTest() throws Throwable {
 		adminHomeWalletTablePage = aHomePage.clickonVendorWalletTable();
 	}
-	
+
 	@Test(priority = 16)
 	public void verifyVendorDetailsLinkTest() throws Throwable {
 		adminHomeVendorDetailsPage = aHomePage.clickonVendorDetails();
 	}
-	
+
 	@Test(priority = 17)
 	public void verifyPGVendorLinkTest() throws Throwable {
 		adminHomePGVendorPage = aHomePage.clickonPGVendor();
 	}
-	
+
 	@Test(priority = 18)
 	public void verifyInVendorWalletLinkTest() throws Throwable {
 		adminHomeInVendorWalletPage = aHomePage.clickonInVendorWallet();
 	}
-	
+
 	//****************TransactionTabTest**********************************
 	@Test(priority = 19)
 	public void verifyTransactionHistoryLinkTest() throws Throwable {
 		adminHomeTransactionHistoryPage = aHomePage.clickonTransactionHistory();
 	}
-	
+
 	@Test(priority = 20)
 	public void verifyAllocationHistoryLinkTest() throws Throwable {
 		adminHomeAllocationHistoryPage = aHomePage.clickonAllocationHistory();
 	}
-	
+
 	@Test(priority = 21)
 	public void verifyStockAllocationLinkTest() throws Throwable {
 		adminHomeStockAllocationPage = aHomePage.clickonStockAllocation();
 	}
-	
+
 	@Test(priority = 22)
 	public void verifyStockAllowApprovalLinkTest() throws Throwable {
 		adminHomeStockAllocApprovalPage = aHomePage.clickonStockAllocApproval();
 	}
-	
+
 	//****************KYC_TabTest****************************************
 	@Test(priority = 23)
 	public void verifyCustomerKYCLinkTest() throws Throwable {
 		adminHomeCustomerKYCPage = aHomePage.clickonCustomerKYC();
 	}
-	
+
 	@Test(priority = 24)
 	public void verifyUploadKYCLinkTest() throws Throwable {
 		adminHomeUploadKYCPage = aHomePage.clickonUploadKYC();
 	}
-	
+
 	//****************CheckBalanceTabTest******************************
 	@Test(priority = 25)
 	public void verifyCheckBalanceLinkTest() throws Throwable {
 		adminHomeCheckBalancePage = aHomePage.clickonCheckBalance();
 	}
-	
+
 	//*******************ReportTabTest*****************************
 	@Test(priority = 26)
 	public void verifyTransactionReportLinkTest() throws Throwable {
 		adminHomeTransactionReportPage = aHomePage.clickonTransactionReport();
 	}
-	
+
 	@Test(priority = 27)
 	public void verifyTransactionWiseReportLinkTest() throws Throwable {
 		adminHomeTransactionWiseReportPage = aHomePage.clickonTransactionWiseReport();
 	}
-	
+
 	@Test(priority = 28)
 	public void verifyStockAllowReportLinkTest() throws Throwable {
 		adminHomeStockAllowReportPage = aHomePage.clickonStockAllowReport();
 	}
-	
+
 	//***********************ProductTabTest********************************
 	@Test(priority = 29)
 	public void verifyProductAuthorsLinkTest() throws Throwable {
@@ -342,19 +342,19 @@ public class AdminHomePageTest extends TestBase {
 	public void verifyVIBStoreLinkTest() throws Throwable {
 		adminHomeVIBStorePage = aHomePage.clickonVIBStore();
 	}
-	
+
 	//********************************************************************
 	@Test(priority = 38)
 	public void verifyImageSliderLinkTest() throws Throwable {
 		adminHomeImageSliderPage = aHomePage.clickonImageSlider();
 	}
-	
+
 	//******************************************************************
 	@Test(priority = 39)
 	public void verifyLogoutLinkTest() throws Throwable {
 		adminLoginPage = aHomePage.clickonLogOut();
 	}
-	
+
 	//******************************************************************
 	@AfterMethod
 	public void shutDown(){

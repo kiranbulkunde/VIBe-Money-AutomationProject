@@ -10,22 +10,24 @@ public class AdminHomeMoneyTypePage extends TestBase {
 
 	//Page Factory or Object Repository for all webElements:
 
-	@FindBy(xpath = "")
+	String moneyTypeName;
+	
+	@FindBy(xpath = "//h4[@class='ng-scope']")
 	WebElement moneyTypeTitle;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[@class='vib_save']")
 	WebElement addMoneyTypeBtn;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@placeholder='Enter addmoney type name']")
 	WebElement enterMoneyTypeName;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement saveBtn;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='msearch']")
 	WebElement searchField;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//td[contains(text(),'moneyTypeName')]")
 	WebElement validSearchResult;
 
 	@FindBy(xpath = "")

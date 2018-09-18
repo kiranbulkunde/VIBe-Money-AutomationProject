@@ -14,13 +14,13 @@ import com.qa.vib.pages.AdminLoginPage;
 import com.qa.vib.util.TestUtil;
 
 public class AdminHomeWalletTypePageTest extends TestBase{
-	
+
 	AdminLoginPage aLoginPage;   
 	AdminHomePage aHomePage;
 	AdminHomeWalletTypePage walletTypePage;
 	TestUtil testUtil;
-	
-	
+
+
 	public AdminHomeWalletTypePageTest(){
 		super(); 
 	}
@@ -35,41 +35,41 @@ public class AdminHomeWalletTypePageTest extends TestBase{
 		walletTypePage = new AdminHomeWalletTypePage();
 		walletTypePage = aHomePage.clickonMasterWalletType();
 	}
-	
+
 	@Test(priority = 1)
 	public void verifyWalletTypeTitleTest() {
 		boolean title = walletTypePage.validateWalletTypeTitle();
 		Assert.assertTrue(title);
 	}
-	
+
 	@DataProvider
 	public Object[][] getWalletTypeTestData() {
 		Object data[][] = TestUtil.getTestData("WalletTypeData");
 		return data;
 	}
-	
+
 	@Test(priority = 2, dataProvider = "getWalletTypeTestData")
 	public void verifyAddNewWalletTypeTest(String walletTypeName)  {
 		walletTypePage.addNewWalletType(walletTypeName);
 		String walletTypeSearch =  driver.findElement(By.xpath("//td[contains(text(),'"+walletTypeName+"')]")).getText();
 		Assert.assertEquals(walletTypeSearch, walletTypeName);
 	}
-	
+
 	@Test(priority = 3, dataProvider = "getWalletTypeTestData")
 	public void verifyWalletTypeSearchResult(String walletTypeName) {
 		walletTypePage.validateWalletTypeNameBySearch(walletTypeName);
 		String servicesSearch =  driver.findElement(By.xpath("//td[contains(text(),'"+walletTypeName+"')]")).getText();
 		Assert.assertEquals(servicesSearch, walletTypeName, '"'+walletTypeName+"'" +"Wallet Type Name not Available");
 	}
-	
+
 	@AfterMethod
 	public void adminLogout() {
 		aHomePage.clickonLogOut();
 	}
-	
+
 	public void shutDown(){
 		driver.quit();
 	}	
-	
+
 
 }
