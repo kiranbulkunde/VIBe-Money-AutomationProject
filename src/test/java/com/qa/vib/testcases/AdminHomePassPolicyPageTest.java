@@ -20,7 +20,6 @@ public class AdminHomePassPolicyPageTest extends TestBase{
 	AdminHomePassPolicyPage passPolicyPage;
 	TestUtil testUtil;
 
-	Rahul
 	public AdminHomePassPolicyPageTest(){
 		super(); 
 	}
@@ -42,7 +41,7 @@ public class AdminHomePassPolicyPageTest extends TestBase{
 		Assert.assertTrue(title);
 	}
 
-	@DataProvider
+	@ DataProvider
 	public Object[][] getPassPolicyTestData() {
 		Object data[][] = TestUtil.getTestData("PasswordPolicyData");
 		return data;
